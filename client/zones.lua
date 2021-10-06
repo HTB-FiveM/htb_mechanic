@@ -84,7 +84,7 @@ end)
 
 
 Citizen.CreateThread(function()
-    -- Draw the Map pBlips, only needs to happen once at startup
+    -- Draw the Map Blips, only needs to happen once at startup
     for mechName,mech in pairs(Config.Mechanics) do
             CreateBlip(mech.Blip.Location, mech.Name, mech.Blip.Scale, mech.Blip.Colour, mech.Blip.Sprite)
     end
@@ -103,8 +103,6 @@ Citizen.CreateThread(function()
             end
 
             for zoneName,zone in pairs(Config.Mechanics[job].Zones) do
-                --local zone = Config.DropZone.Zones[zoneName]
-
                 if zoneChecks[job][zoneName]["inRange"] == true then
                     DrawZone(zone.Location, zone.Marker.Type, zone.Marker.Size, zone.Marker.Colour)
                 end
@@ -120,14 +118,17 @@ Citizen.CreateThread(function()
 end)
 
 
--- exports.keybinds:RegisterKeybind('Interact', 'Interaction key', 'e', function()
---     if zoneChecks["Manifest"]["in"] == true then
---         ToggleGUI('manifest', true)
---     elseif zoneChecks["GearStation"]["in"] == true then
---         ToggleGUI('gear', true)
---     elseif zoneChecks["PackingMats"]["in"] == true then
---         print("Gunna pack")
---     end
+exports.keybinds:RegisterKeybind('InteractMechanic', 'Interaction key', 'e', function()
+    local job = CurrentJob()
 
+    if zoneChecks[job]["Service"]["in"] == true then
+        ToggleGUI('service', true)
+    elseif zoneChecks[job]["CloakRoom"]["in"] == true then
+        print('Changing clothes')
+    elseif zoneChecks[job]["Workbench"]["in"] == true then
+        print("Crafting")
+    elseif zoneChecks[job]["BossActions"]["in"] == true then
+        print("Boss actions")
+    end
 
--- end)
+end)

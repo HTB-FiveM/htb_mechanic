@@ -6,8 +6,8 @@ if Config.RolePlayFramework == nil or Config.RolePlayFramework ~= 'none' then
 end
 
 -------------------------------------------------------------------------------------------
-RegisterCommand('godz', function(source, args, rawcommand)
-    local loc = Config.DropZone.Zones.Manifest.Location
+RegisterCommand('gomech', function(source, args, rawcommand)
+    local loc = Config.Mechanics.Mech1.Blip.Location
     SetEntityCoords(PlayerPedId(), loc.x, loc.y, loc.z, true, true, false, false)
 end)
 

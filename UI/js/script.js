@@ -20,7 +20,7 @@ var app = new Vue({
             // $('.collapse').collapse('hide');
 
             // this.search = '';
-            $.post('https://htb_skydiving/close', JSON.stringify({}));
+            $.post('https://htb_mechanic/close', JSON.stringify({}));
         },
 
 
