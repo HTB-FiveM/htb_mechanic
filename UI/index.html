@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>DZ Management</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap-4.6.css">
+    <link rel="stylesheet" href="css/stylesheet.css" />
+</head>
+<body>
+    <div id="app" class="container-fluid" v-cloak>
+        <div id="appBorder">
+            <div v-if="mode === 'manifest'">
+                <input type="text" value="manifest" />
+            </div>
+            <div v-if="mode === 'gear'">
+                <input type="text" value="gear" />
+            </div>
+        </div>
+    </div>  
+
+    <script src="js/vue.min.js"></script>
+    <script src="js/jquery-3.5.1.js"></script>
+    <script src="js/bootstrap.bundle-4.6.js"></script>
+    <script src="js/script.js"></script>
+
+</body>
+</html>

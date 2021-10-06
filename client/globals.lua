@@ -1,0 +1,2 @@
+
+jobHasChanged = false
