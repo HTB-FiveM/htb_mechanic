@@ -1,5 +1,5 @@
 Config = {}
-Config.Debug = false
+Config.Debug = true
 
 -- Set the identifier type as a string here, for example:
 --		steam

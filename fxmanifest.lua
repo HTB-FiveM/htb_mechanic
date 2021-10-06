@@ -23,6 +23,8 @@ shared_scripts {
 }
 
 client_scripts {
+    'client/nativeStuff.lua',
+    'client/debugging.lua',
     'client/globals.lua',
 	'FrameworkSpecific/Client/*.lua',
     'client/roleplay.lua',
