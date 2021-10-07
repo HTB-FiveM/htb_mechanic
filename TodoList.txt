@@ -1,0 +1,7 @@
+
+* Preview full mods and have a purchase button to commit at the end
+* Generate quote allowing specific items to be selected
+* Save the qoute against a player
+* Initiate purchase and autro configure based on previously saved quote
+* Mechanic can set a percentage profit at the end.
+

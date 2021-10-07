@@ -19,3 +19,13 @@ function CurrentJob()
 
 end
 
+function ExtraZoneDisplayConditionsMet(zoneName)
+    local ret = true
+    if zoneName == 'Service' then
+        ret = ret and IsPedInAnyVehicle(PlayerPedId(), false)
+    end
+
+    -- Stack more conditions here if needed
+
+    return ret
+end

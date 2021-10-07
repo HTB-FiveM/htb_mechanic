@@ -29,7 +29,8 @@ client_scripts {
 	'FrameworkSpecific/Client/*.lua',
     'client/roleplay.lua',
     'client/zones.lua',
-    'client/main_cl.lua'
+    'client/main_cl.lua',
+    'client/vehicleModifications.lua'
 }
 
 server_scripts {

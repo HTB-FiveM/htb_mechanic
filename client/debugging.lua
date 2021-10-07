@@ -43,7 +43,7 @@ if Config.Debug == true then
         elseif category == 'customise' then -- /car customise
             local veh = GetVehiclePedIsIn(PlayerPedId(), false)
             SetVehicleModKit(veh, 0) -- Must  be called before modifying anything
-            for modType = 0, 10, 1 do
+            for modType = 0, 49, 1 do
                 local bestMod = GetNumVehicleMods(veh, modType)
                 --print('BestMod: '..modType..' - '..bestMod)
                 SetVehicleMod(veh, modType, bestMod - 1, false)
@@ -53,7 +53,6 @@ if Config.Debug == true then
             local veh = GetVehiclePedIsIn(PlayerPedId(), false)
             for id = 0, 20, 1 do
                 if DoesExtraExist(veh, id) then
-print('Found extra ' .. id)
                     SetVehicleExtra(veh, id, 1)
                 end
             end

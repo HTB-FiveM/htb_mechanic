@@ -103,11 +103,14 @@ Citizen.CreateThread(function()
             end
 
             for zoneName,zone in pairs(Config.Mechanics[job].Zones) do
-                if zoneChecks[job][zoneName]["inRange"] == true then
+                local vis = false
+                if zoneChecks[job][zoneName]["inRange"] == true and ExtraZoneDisplayConditionsMet(zoneName) then
                     DrawZone(zone.Location, zone.Marker.Type, zone.Marker.Size, zone.Marker.Colour)
+                    vis = true
                 end
 
-                if zoneChecks[job][zoneName]["in"] == true then
+                if zoneChecks[job][zoneName]["in"] == true and vis then
+                    DisableControlAction(0, 86, true)	-- INPUT_VEH_HORN
                     HelpPrompt(zone.ActionText)
                 end
 
@@ -122,7 +125,7 @@ exports.keybinds:RegisterKeybind('InteractMechanic', 'Interaction key', 'e', fun
     local job = CurrentJob()
 
     if zoneChecks[job]["Service"]["in"] == true then
-        ToggleGUI('service', true)
+        ShowModificationsPage()
     elseif zoneChecks[job]["CloakRoom"]["in"] == true then
         print('Changing clothes')
     elseif zoneChecks[job]["Workbench"]["in"] == true then
